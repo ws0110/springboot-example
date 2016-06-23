@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" /> <!-- href="../../static/css/style.css"  -->
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap-theme.min.css}" />
+    
+    <script th:src="@{/webjars/jquery/1.11.1/jquery.min.js}" ></script>
+	<script th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}" ></script>
+</head>
+
+<body>
+<div class="container">
+	<h1>고객 관리 시스템</h1>
+	
+	<form th:action="@{/login}" method="post" class="form-signin">
+		<h2 class="form-signin-heading">로그인 폼</h2>
+		
+		<div th:if="${param.error}" class="alert alert-danger">
+			잘못된 아이디나 암호입니다.
+		</div>
+		
+		<input type="text" placeholder="Username" name="username" class="form-control" required="required" autofocus="autofocus" />
+		<input type="password" placeholder="Password" name="password" class="form-control" required="required" />
+		
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+		
+	</form>
+	
+</div>
+</body>
+
+</html>

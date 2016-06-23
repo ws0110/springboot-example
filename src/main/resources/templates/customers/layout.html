@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" /> <!-- href="../../static/css/style.css"  -->
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap-theme.min.css}" />
+    
+    <script th:src="@{/webjars/jquery/1.11.1/jquery.min.js}" ></script>
+	<script th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}" ></script>
+</head>
+
+<body>
+<div class="container">
+	<h1>고객 관리 시스템</h1>
+	<p>
+		<span sec:authentication="principal.user.username">duke</span> 님 로그인 상태
+		<a th:href="@{/logout}" class="btn btn-default btn-xs">로그아웃</a>
+	</p>
+	<div layout:fragment="content">Content</div>
+</div>
+</body>
+
+</html>
